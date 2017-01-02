@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Bird Attractor Device</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+     <link rel="stylesheet" type="text/css" href="css/custom.css">
+     <link href="https://fonts.googleapis.com/css?family=Lato|Patua+One" rel="stylesheet">
+    <style>
+    body {
+        padding-top: 70px;
+        /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    }
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Bird Attractor</a>
+            </div>
+
+            
+
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+       <!--     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#">Setup</a>
+                    </li>
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h1>1. Set Current Time</h1>
+                <p class="lead">What is your current, local date and time?</p>
+                <form>
+                    <div> Current Date: <input type="date" name="currentDate"> </div>
+                    <div> Current Time: <input type="time" name="currentTime"> </div>
+                </form>
+            </div>
+            <div class="col-md-4">
+                <h1> 2. Set Alarm Time</h1>
+                <p class="lead">Now, let's set up the alarm.</p>
+                <form id="live_form">
+                    <div class="form-group">
+                        <div> Start Date: <input type="date"></div>
+                        <div> End Date: <input type="date"></div>
+                        <div class="dropdown">
+                            Repeat: <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="button" name="repeat"> choose one <span class="caret"></span></button>
+                            <ul class="dropdown-menu" role="menu">
+                                <li id="daily" name="repeat_daily" role="presentation" ><a href="#">Daily</a></li>
+                                <li id="weekly" name="repeat_weekly" role="presentation"><a href="#">Weekly</a></li>
+                                <li id="custom" name="repeat_custom" role="presentation"><a href="#">Custom</a></li>
+                            </ul>
+                        </div></p>
+                    </div>
+                    <p> ---Figure out Jquery to build conditional form based on the dropdown ---
+                    <div class="form-group ">
+                        <div>Daily Alarm Time: <input type="time" name="dailyTime"></div>
+                    </div>
+                    <div class="form-group ">
+                      <div>
+                        <p>Alarm sounds at <input type="time" name="weeklyTime"> every:</p>
+                        <div class="checkbox">
+                            <label><input type="checkbox" name="weeklyTime" value="">Monday</label>
+                        </div>
+                        <div class="checkbox">
+                            <label><input type="checkbox" name="weeklyTime" value="">Tuesday</label>
+                        </div>
+                        <div class="checkbox">
+                            <label><input type="checkbox" name="weeklyTime" value="">Wednesday</label>
+                        </div>
+                        <div class="checkbox">
+                            <label><input type="checkbox" name="weeklyTime" value="">Thursday</label>
+                        </div>
+                        <div class="checkbox">
+                            <label><input type="checkbox" name="weeklyTime" value="">Friday</label>
+                        </div>
+                        <div class="checkbox">
+                            <label><input type="checkbox" name="weeklyTime" value="">Saturday</label>
+                        </div>
+                        <div class="checkbox">
+                            <label><input type="checkbox" name="weeklyTime" value="">Sunday</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group ">
+                      <div>
+                          Alarm sounds on <input type="date" name="custom"> at <input type="time" name="custom">
+                      </div>
+                      <div>
+                          Add an additional date & time <button type="button" name="custom" class="btn btn-default" aria-label="Left Align">
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true"> </span>
+                          </button>
+                      </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-4">
+                <h1>3. Confirm Details</h1>
+                <p class="lead">Do these details look right to you?</p>
+                  <div class="table-responsive">          
+                      <table class="table">
+                        <tbody>
+                          <tr>
+                            <td>Current Date:</td>
+                            <td>placeholder</td>
+                          </tr>
+                          <tr>
+                            <td>Current Time:</td>
+                            <td>placeholder</td>
+                          </tr>
+                          <tr>
+                            <td>Alarm Start Date:</td>
+                            <td>placeholder</td>
+                          </tr> 
+                          <tr>
+                            <td>Alarm Stop Date:</td>
+                            <td>placeholder</td>
+                          </tr>  
+                          <tr>
+                            <td>Repeat Style:</td>
+                            <td>placeholder</td>
+                          </tr>
+                          <tr>
+                            <td>Repeat Details:</td>
+                            <td>placeholder</td>
+                          </tr> 
+                        </tbody>
+                      </table>
+                  </div>
+            </div>
+        </div>
+        <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery Version 1.11.1 -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+   
+    <!-- Conditional/Hidden Form Fields go to https://formden.com/blog/conditional-form-field-->
+    <script>
+    </script>
+
+</body>
+
+</html>
